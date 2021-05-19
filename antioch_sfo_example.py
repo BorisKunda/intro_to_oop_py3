@@ -1,9 +1,10 @@
 from time import sleep
+from typing import List, Any, Union
 
 
 class AntiochToSFO:
 
-    def __init__(self, stops):
+    def __init__(self, stops: List[Union[str, Any]]):
         # set number of stops
         self.stops = stops
         # start at beginning
@@ -43,12 +44,16 @@ class AntiochToSFO:
 # for when we call this script
 if __name__ == '__main__':
     # set stops for this train
-    stations = ['Antioch', 'Pittsburg Center', 'Pittsburg / Bay Point', 'North Concord / Martinex',
-                'Concord', 'Pleasant Hill/ Contra costa Centre', 'Walnut Creek', 'Lafayette',
-                'Orinda', 'Rockridge', 'MacArthur', '19th St/Oakland', '12th St/Oakland City Center',
-                'West Oakland', 'Embarcadero', 'Montgomery St', 'Powell St', 'Civic Center/ UN Plaza',
-                '16th St Mission', '24th St Mission', 'Glen Park', 'Balboa Park', 'Daly City',
-                'Colma', 'South San Francisco', 'San Bruno', 'San Francisco International Airport']
+    stations: List[Union[str, Any]] = ['Antioch', 'Pittsburg Center', 'Pittsburg / Bay Point',
+                                       'North Concord / Martinex',
+                                       'Concord', 'Pleasant Hill/ Contra costa Centre', 'Walnut Creek', 'Lafayette',
+                                       'Orinda', 'Rockridge', 'MacArthur', '19th St/Oakland',
+                                       '12th St/Oakland City Center',
+                                       'West Oakland', 'Embarcadero', 'Montgomery St', 'Powell St',
+                                       'Civic Center/ UN Plaza',
+                                       '16th St Mission', '24th St Mission', 'Glen Park', 'Balboa Park', 'Daly City',
+                                       'Colma', 'South San Francisco', 'San Bruno',
+                                       'San Francisco International Airport']
     # set test case
     test_000 = AntiochToSFO(stops=stations)
     # go through 50 stops
